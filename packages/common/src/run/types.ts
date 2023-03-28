@@ -31,6 +31,7 @@ export interface CreateRunParameters {
   platform: PlatformData;
   group?: string;
   cypressVersion?: string;
+  customRunId?: string;
 }
 
 export type CreateRunWarning = Record<string, string> & {

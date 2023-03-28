@@ -55,7 +55,7 @@ export const getById = getRunById;
 export const createRun: ExecutionDriver['createRun'] = async (params) => {
   const ciBuildId = getRunCiBuildId(params);
 
-  const runId = generateRunIdHash(ciBuildId, params.projectId);
+  const runId = params.customRunId || generateRunIdHash(ciBuildId, params.projectId);
 
   const groupId = params.group ?? generateGroupId(params.platform, ciBuildId);
 
